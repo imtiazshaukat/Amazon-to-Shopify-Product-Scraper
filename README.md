@@ -4,77 +4,48 @@ This project is a simple JavaScript snippet that scrapes product data from an Am
 🚀 Features
 Extracts:
 
-Product title
+1. Product title
 
-Product description
+2. Product description
 
-Price
+3. Price
 
-"About this item" bullet points
+4. "About this item" bullet points
 
-Key product details (like material, care instructions, etc.)
+5. Key product details (like material, care instructions, etc.)
 
-Product images
+6. Product images
 
-Formats data into Shopify import structure
-
-Skips the first image and generates a separate row for each additional image
-
-Outputs structured JSON for easy CSV conversion
 
 🧠 Use Case
 This is especially useful when you're:
 
-Dropshipping from Amazon
+1. Dropshipping from Amazon
 
-Importing data for product research
+2. Importing data for product research
 
-Bulk uploading products into Shopify with media assets
+3. Bulk uploading products into Shopify with media assets
 
-Automating store data entry
-
-📦 Output Format (Example)
-Each image (except the first) generates a new product row:
-
-[
-  {
-    "Handle": "levi-mens-559-relaxed-jeans",
-    "Title": "",
-    "Body (HTML)": "",
-    ...
-    "Image Src": "https://m.media-amazon.com/images/I/41gS9EkxXqL._AC_SX385_.jpg",
-    "Image Position": "2"
-  },
-  {
-    "Handle": "levi-mens-559-relaxed-jeans",
-    "Title": "",
-    "Body (HTML)": "",
-    ...
-    "Image Src": "https://m.media-amazon.com/images/I/51ZLGapIQkL._AC_SX385_.jpg",
-    "Image Position": "3"
-  }
-]
-
+4. Automating store data entry
+   
 🛠 How to Use
-Go to any Amazon product page (e.g., jeans, gadgets, kitchenware, etc.).
+1. Go to any Amazon product page (e.g., jeans, gadgets, kitchenware, etc.).
 
-Open Developer Tools (Right click → Inspect → Console tab).
+2. Open Developer Tools (Right click → Inspect → Console tab).
 
-Paste the script from scraper.js into the console and hit Enter.
+3. Paste the script from scraper.js into the console and hit Enter.
 
-Copy the generated JSON output.
+4. Copy the generated JSON output.
 
-Convert it to CSV using any online tool or script.
+5. Convert it to CSV using any online tool or script.
 
-Import it into your Shopify store.
+6. Import it into your Shopify store.
 
 📁 Files
-Product_Scrapping.js — The core scraping script.
+1. Product_Scrapping.js — The core scraping script.
 
-README.md — This documentation.
+2. README.md — This documentation.
 
-⚙️ Shopify CSV Reference
-This script outputs JSON in a format compatible with Shopify's CSV product import format.
 
 📜 License
 MIT License — feel free to use and modify.

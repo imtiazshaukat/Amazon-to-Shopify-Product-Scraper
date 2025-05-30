@@ -4,17 +4,6 @@
         return el ? el.innerText.trim() : null;
     }
 
-    const productDetails = {};
-    document
-        .querySelectorAll("#productFactsDesktop_feature_div .product-facts-detail")
-        .forEach((detail) => {
-            const key = detail.querySelector(".a-col-left span span")?.innerText?.trim();
-            const value = detail.querySelector(".a-col-right span span")?.innerText?.trim();
-            if (key && value) {
-                productDetails[key] = value;
-            }
-        });
-
     const aboutThisItem = Array.from(
         document.querySelectorAll(
             "#productFactsDesktop_feature_div ul.a-unordered-list li span"
@@ -28,7 +17,8 @@
 
     const title = getText('#productTitle');
     const description = getText('#productDescription');
-    const color = getText('#variation_color_name .selection') || getText('#variation_color_name .a-dropdown-prompt');
+    const color = getText('#variation_color_name .selection') || getText('#variation_color_name .a-dropdown-prompt') || getText('#inline-twister-expanded-dimension-text-color_name') ;
+    const product_detail = getText('.a-expander-content.a-expander-partial-collapse-content.a-expander-content-expanded');
     const images = Array.from(document.querySelectorAll('#main-image-container img'))
         .slice(1)
         .map(img => img.getAttribute('src') || img.getAttribute('data-src'))
@@ -36,13 +26,13 @@
 
     const shopifyFormatted = images.map((imgSrc, index) => {
         return {
-            "Handle": title + "" + color,
+            "Handle": title + " " + color,
             "Title": index === 0 ? title : "",
-            "Body (HTML)": index === 0 ? description : "",
+            "Body (HTML)": index === 0 ? product_detail + description : "",
             "Vendor": "",
             "Product Category": "",
             "Type": "",
-            "Tags": "",
+            "Tags": "shorts_men",
             "Published": index === 0 ? "true" : "",
             "Option1 Name": index === 0 ? "Color" : "",
             "Option1 Value": index === 0 ? color : "",
